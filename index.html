@@ -17,44 +17,91 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <div class="container">
+    <section >
+        <input onclick="document.getElementById('id01').style.display='flex'" class="mbutton" type="submit" name="" value="Click Me">
+        <div class="container" id="id01">
             <div class="user signinBx">
                 <div class="imgBx">
                     <img src="img1.jpg" alt="">
                 </div>
                 <div class="formBx">
-                    <form action="">
+                    <form name="signin" action="" onsubmit="return validate1();">
                         <h2><img src="logo.jpg"><br><br>Sign In</h2>
-                        <input type="text" name="" placeholder="Username">
-                        <input type="password" name="" placeholder="Password">
+                        <input type="text" name="username" placeholder="Username">
+                        <span class="error" id="usernameErr1"></span>
+                        <input type="password" name="password" placeholder="Password">
+                        <span class="error" id="passErr1"></span>
                         <input class="sbutton" type="submit" name="" value="login">
                         <p style="margin-top: 20px; font-size: 12px; letter-spacing: 1px;" class="signup">Don't have an account ? <a href="#" onclick="toggleForm();">Sign Up.</a></p>
-
                     </form>
                 </div>
             </div>
             <div class="user signupBx">
                 <div class="formBx">
-                    <form action="">
+                    <form name="register" action="" onsubmit="return validate2();">
                         <h2><img id="sinlogo" src="logo.jpg"><br><br><br>Create an Account</h2>
-                        <input type="text" name="" placeholder="Username">
-                        <input type="email" name="" placeholder="Email Address">
-                        <input type="password" name="" placeholder="Create Password">
-                        <input type="password" name="" placeholder="Confirm Password">
+                        <input type="text" name="username" placeholder="Username">
+                        <span class="error" id="usernameErr"></span>
+                        <input type="email" name="email" placeholder="Email Address">
+                        <span class="error" id="emailErr"></span>
+                        <input type="password" name="password" placeholder="Create Password">
+                        <span class="error" id="passErr"></span>
+                        <input type="password" name="password1" placeholder="Confirm Password">
+                        <span class="error" id="pass1Err"></span>
                         <input class="sbutton" type="submit" name="" value="Sign Up">
                         <p style="margin-top: 20px; font-size: 12px; letter-spacing: 1px;" class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign In.</a></p>
-
                     </form>
                 </div>
                 <div class="imgBx">
                     <img src="img2.jpg" alt="">
                 </div>
             </div>
-
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
         </div>
     </section>
     <script type="text/javascript">
+        function validate1(){
+            var username = document.signin.username.value;
+            var password = document.signin.password.value;
+            if (username==null || username==""){ 
+                document.getElementById("usernameErr1").innerText = "Username is required";
+                return false; 
+            }
+            if (password==null || password==""){ 
+                document.getElementById("passErr1").innerText = "Password is required";
+                return false; 
+            }
+        }
+        function validate2(){ 
+            var username = document.register.username.value;
+            var email = document.register.email.value;
+            var password = document.register.password.value;
+            var password1 = document.register.password1.value;
+            if (username==null || username==""){ 
+                document.getElementById("usernameErr").innerText = "Username is required";
+                return false;
+            }
+            else
+                document.getElementById("usernameErr").innerText = "";
+            if (email==null || email==""){ 
+                document.getElementById("emailErr").innerText = "Email Address is required";
+                return false; 
+            }
+            else
+                document.getElementById("emailErr").innerText = "";
+            if (password==null || password==""){ 
+                document.getElementById("passErr").innerText = "Password is required";
+                return false; 
+            }
+            else
+                document.getElementById("passErr").innerText = "";
+            if (password1==null || password1==""){ 
+                document.getElementById("pass1Err").innerText = "Please confirm passwoed";
+                return false; 
+            }
+            else
+                document.getElementById("pass1Err").innerText = "";
+        }
         function toggleForm(){
             var container = document.querySelector('.container');
             container.classList.toggle('active')

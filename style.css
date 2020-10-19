@@ -9,6 +9,7 @@ section {
 }
 
 section .container {
+	display: none;
 	position: relative;
 	width: 800px;
 	height: 500px;
@@ -114,6 +115,34 @@ section .container .user .formBx form input.sbutton {
 	text-transform: uppercase;
 }
 
+.error{
+	color: red;
+	font-size: 11px;
+	padding: 0%;
+	width: 100%;
+}
+.mbutton{
+	top: 0;
+	left: 0;
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background: #f7ed38;
+	color: #333;
+	border: none;
+	box-sizing: content-box;
+	box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.72);
+	margin: 10px 0;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	padding: 10px 15px;
+	border-radius: 12px 12px 12px 12px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 section .container .user .formBx form input.sbutton:hover {
 	position: relative;
 	box-sizing: content-box;
@@ -131,6 +160,7 @@ section .container .user .formBx form input.sbutton:hover {
 	text-align: center;
 	text-transform: uppercase;
 }
+
 section .container .user .formBx form input[type="submit"] {
 	max-width: 100px;
 	background: #f7ed38;
@@ -229,4 +259,18 @@ section .container .signinBx .imgBx {
 		box-shadow: 0px 0px 52px 6px rgba(0, 0, 0, 0.61);
 		overflow: hidden;
 	}
+}
+
+.close {
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	color: #000;
+	font-size: 30px;
+}
+  
+.close:hover,
+.close:focus {
+	color: #757575;
+	cursor: pointer;
 }
