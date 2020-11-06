@@ -19,6 +19,8 @@
 <body>
     <section >
         <input onclick="document.getElementById('id01').style.display='flex'" class="mbutton" type="submit" name="" value="Click Me">
+        <input onclick="register1();" class="rbutton" type="submit" name="" value="Register">
+        <input onclick="signIn();" class="sbutton" type="submit" name="" value="Sign in">
         <div class="container" id="id01">
             <div class="user signinBx">
                 <div class="imgBx">
@@ -27,10 +29,10 @@
                 <div class="formBx">
                     <form name="signin" action="" onsubmit="return validate1();">
                         <h2><img src="logo.jpg"><br><br>Sign In</h2>
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="text" name="username" placeholder="Username" required>
                         <span class="error" id="usernameErr1"></span>
-                        <input type="password" name="password" placeholder="Password">
-                        <span class="error" id="passErr1"></span>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <span class="error" id="passErr1"></span><br>
                         <input class="sbutton" type="submit" name="" value="login">
                         <p style="margin-top: 20px; font-size: 12px; letter-spacing: 1px;" class="signup">Don't have an account ? <a href="#" onclick="toggleForm();">Sign Up.</a></p>
                     </form>
@@ -47,7 +49,7 @@
                         <input type="password" name="password" placeholder="Create Password">
                         <span class="error" id="passErr"></span>
                         <input type="password" name="password1" placeholder="Confirm Password">
-                        <span class="error" id="pass1Err"></span>
+                        <span class="error" id="pass1Err"></span><br>
                         <input class="sbutton" type="submit" name="" value="Sign Up">
                         <p style="margin-top: 20px; font-size: 12px; letter-spacing: 1px;" class="signup">Already have an account ? <a href="#" onclick="toggleForm();">Sign In.</a></p>
                     </form>
@@ -133,6 +135,16 @@
         function toggleForm(){
             var container = document.querySelector('.container');
             container.classList.toggle('active')
+        }
+        function register1(){
+            document.getElementById('id01').style.display='flex';
+            var container = document.querySelector('.container');
+            container.classList.remove('active');
+        }
+        function signIn(){
+            document.getElementById('id01').style.display='flex';
+            var container = document.querySelector('.container');
+            container.classList.add('active')
         }
     </script>
     

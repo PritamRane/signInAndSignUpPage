@@ -95,6 +95,7 @@ section .container .user .formBx form input {
 	letter-spacing: 1px;
 	font-weight: 300;
 	border-radius: 12px 12px 12px 12px;
+	outline: 0;
 }
 
 section .container .user .formBx form input.sbutton {
@@ -113,6 +114,7 @@ section .container .user .formBx form input.sbutton {
 	padding: 10px 15px;
 	text-align: center;
 	text-transform: uppercase;
+	outline: 0;
 }
 
 .error{
@@ -121,7 +123,7 @@ section .container .user .formBx form input.sbutton {
 	padding: 0%;
 	width: 100%;
 }
-.mbutton{
+section input.mbutton{
 	top: 0;
 	left: 0;
 	display: flex;
@@ -141,6 +143,27 @@ section .container .user .formBx form input.sbutton {
 	border-radius: 12px 12px 12px 12px;
 	text-align: center;
 	text-transform: uppercase;
+	outline: 0;
+}
+section input.mbutton:hover{
+	top: 0;
+	left: 0;
+	display: flex;
+	position: absolute;
+	box-sizing: content-box;
+	background: #000000;
+	color: rgb(255, 255, 255);
+	border: none;
+	box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.72);
+	margin: 10px 0;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	border-radius: 12px 12px 12px 12px;
+	padding: 10px 15px;
+	transition: 0.5s;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 section .container .user .formBx form input.sbutton:hover {
