@@ -67,10 +67,14 @@
                 document.getElementById("usernameErr1").innerText = "Username is required";
                 return false; 
             }
+            else
+                document.getElementById("usernameErr1").innerText = "";
             if (password==null || password==""){ 
                 document.getElementById("passErr1").innerText = "Password is required";
                 return false; 
             }
+            else
+                document.getElementById("passErr1").innerText = "";
         }
         function validate2(){ 
             var username = document.register.username.value;
@@ -83,24 +87,48 @@
             }
             else
                 document.getElementById("usernameErr").innerText = "";
+
+
             if (email==null || email==""){ 
                 document.getElementById("emailErr").innerText = "Email Address is required";
                 return false; 
             }
-            else
-                document.getElementById("emailErr").innerText = "";
+            
+            else{ 
+                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+                    document.getElementById("emailErr").innerText = "";
+                }
+                else{
+                    document.getElementById("emailErr").innerText = "invalid email address!";
+                    return false;
+                }
+            }
+
+
+
+
+
             if (password==null || password==""){ 
                 document.getElementById("passErr").innerText = "Password is required";
                 return false; 
             }
             else
                 document.getElementById("passErr").innerText = "";
+            
+            
             if (password1==null || password1==""){ 
-                document.getElementById("pass1Err").innerText = "Please confirm passwoed";
+                document.getElementById("pass1Err").innerText = "Please confirm password";
                 return false; 
             }
-            else
-                document.getElementById("pass1Err").innerText = "";
+            else{
+                if (password == password1)
+                    document.getElementById("pass1Err").innerText = "";
+                else{
+                    document.getElementById("pass1Err").innerText = "password did not match please check and try again";
+                    return false;
+                }
+            }
+            
         }
         function toggleForm(){
             var container = document.querySelector('.container');
